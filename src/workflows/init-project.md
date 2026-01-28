@@ -21,6 +21,11 @@ After init, project is ready for first PLAN.
 - Build momentum into planning
 </philosophy>
 
+<references>
+@src/templates/config.md
+@src/references/sonarqube-integration.md
+</references>
+
 <process>
 
 <step name="check_existing" priority="first">
@@ -214,9 +219,105 @@ Resume file: .paul/PROJECT.md
 ```
 </step>
 
+<step name="prompt_integrations">
+**Ask about optional integrations:**
+
+```
+Optional integrations:
+
+Would you like to enable SonarQube code quality scanning?
+(Requires SonarQube server and MCP server - can enable later)
+
+[1] Yes, enable SonarQube
+[2] Skip for now
+```
+
+Wait for user response.
+
+**If "1" or "yes" or "enable":**
+
+1. Prompt for project key:
+   ```
+   SonarQube project key?
+   (Press Enter to use: [project_name])
+   ```
+
+   - If user presses Enter: use `project_name`
+   - Otherwise: use provided key
+
+2. Create `.paul/config.md`:
+   ```markdown
+   # Project Config
+
+   **Project:** [project_name]
+   **Created:** [timestamp]
+
+   ## Project Settings
+
+   ```yaml
+   project:
+     name: [project_name]
+     version: 0.0.0
+   ```
+
+   ## Integrations
+
+   ### SonarQube
+
+   ```yaml
+   sonarqube:
+     enabled: true
+     project_key: [project_key]
+   ```
+
+   ## Preferences
+
+   ```yaml
+   preferences:
+     auto_commit: false
+     verbose_output: false
+   ```
+
+   ---
+   *Config created: [timestamp]*
+   ```
+
+3. Store `integrations_enabled = true`
+
+**If "2" or "skip" or "no":**
+
+Store `integrations_enabled = false`
+(Don't create config.md - user can add later)
+</step>
+
 <step name="confirm_and_route">
 **Display confirmation with ONE next action:**
 
+**If integrations_enabled:**
+```
+════════════════════════════════════════
+PAUL INITIALIZED
+════════════════════════════════════════
+
+Project: [project_name]
+Core value: [core_value]
+
+Created:
+  .paul/PROJECT.md    ✓
+  .paul/ROADMAP.md    ✓
+  .paul/STATE.md      ✓
+  .paul/config.md     ✓  (SonarQube enabled)
+  .paul/phases/       ✓
+
+────────────────────────────────────────
+▶ NEXT: /paul:plan
+  Define your phases and create your first plan.
+────────────────────────────────────────
+
+Type "yes" to proceed, or ask questions first.
+```
+
+**If not integrations_enabled:**
 ```
 ════════════════════════════════════════
 PAUL INITIALIZED
@@ -249,6 +350,7 @@ Type "yes" to proceed, or ask questions first.
 - `.paul/PROJECT.md` (populated from conversation)
 - `.paul/ROADMAP.md` (skeleton for planning)
 - `.paul/STATE.md` (initialized state)
+- `.paul/config.md` (if integrations enabled)
 - `.paul/phases/` (empty directory)
 - Clear routing to `/paul:plan`
 </output>
@@ -266,3 +368,21 @@ Type "yes" to proceed, or ask questions first.
 - Report what was created vs failed
 - Offer to retry or clean up
 </error_handling>
+
+---
+
+## GSD Parity Documentation
+
+### Source Reference
+- **GSD File:** Adapted from GSD init patterns
+
+### Adapted from GSD
+- Conversational question flow
+- One question at a time
+- File population from answers
+- Single next action routing
+
+### PAUL Innovations
+- **Integration prompts:** Optional SonarQube setup during init
+- **Config creation:** `.paul/config.md` for enabled integrations
+- **Extensible design:** Ready for future integration prompts
