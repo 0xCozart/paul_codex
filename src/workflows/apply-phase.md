@@ -174,9 +174,19 @@ After all tasks attempted:
 2. Update STATE.md:
    - Loop position: PLAN ✓ → APPLY ✓ → UNIFY ○
    - Last activity: timestamp and completion status
-3. Report to user:
-   - "APPLY complete. [N] tasks executed."
-   - "Ready for UNIFY phase to reconcile and close loop."
+3. Report with quick continuation prompt:
+   ```
+   ════════════════════════════════════════
+   APPLY COMPLETE
+   ════════════════════════════════════════
+   [execution summary]
+
+   ---
+   Continue to UNIFY?
+
+   [1] Yes, run UNIFY | [2] Pause here
+   ```
+4. **Accept quick inputs:** "1", "yes", "continue", "go" → run `/paul:unify [plan-path]`
 </step>
 
 </process>

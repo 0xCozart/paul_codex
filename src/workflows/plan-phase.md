@@ -152,7 +152,7 @@ Next phase: APPLY (after plan approval)
    - If first plan of milestone: Change "Not started" → "In progress"
    - Update phase status: "Not started" → "Planning"
 
-3. **Report to user** with ONE next action:
+3. **Report with quick continuation prompt:**
    ```
    ════════════════════════════════════════
    PLAN CREATED
@@ -161,15 +161,14 @@ Next phase: APPLY (after plan approval)
    Plan: [plan-path]
    Phase: [N] — [Phase Name]
 
-   Review the plan above, then:
+   [plan summary - key tasks, checkpoints]
 
-   ────────────────────────────────────────
-   ▶ NEXT: /paul:apply [plan-path]
-     Execute the approved plan.
-   ────────────────────────────────────────
+   ---
+   Continue to APPLY?
 
-   Type "approved" to proceed, or ask questions first.
+   [1] Approved, run APPLY | [2] Questions first | [3] Pause here
    ```
+4. **Accept quick inputs:** "1", "approved", "yes", "go" → run `/paul:apply [plan-path]`
 </step>
 
 </process>

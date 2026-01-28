@@ -112,11 +112,23 @@ If this completes the phase (all plans done):
 </step>
 
 <step name="signal_completion">
-Report to user:
-1. "Loop complete for Plan {NN}-{plan}"
-2. Summary of what was built
-3. Any deviations noted
-4. "Ready for next PLAN" or "Phase complete, ready for Phase {N+1}"
+Report with quick continuation prompt:
+```
+════════════════════════════════════════
+LOOP COMPLETE
+════════════════════════════════════════
+
+Plan: {NN}-{plan} — [description]
+[summary of what was built]
+[deviations if any]
+
+---
+Continue to next PLAN?
+
+[1] Yes, plan next | [2] Pause here
+```
+
+**Accept quick inputs:** "1", "yes", "continue", "go" → run `/paul:plan` for next phase/plan
 </step>
 
 </process>
