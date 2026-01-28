@@ -134,9 +134,18 @@ depends_on: ["01-01", "01-02"]  # Genuine: imports types from both
 
 ## Session Handoffs
 
-When context is exhausted or work spans sessions:
+When context is exhausted or work spans sessions, PAUL provides explicit handoff support.
+
+### Two Levels of Continuity
+
+| Level | File | When to Use |
+|-------|------|-------------|
+| Light | STATE.md Session Continuity | Quick breaks, same-day resume |
+| Full | HANDOFF-{date}.md | Context limits, next-day resume, zero-context sessions |
 
 ### STATE.md Session Continuity Section
+Always updated. Minimal but sufficient for quick resume:
+
 ```markdown
 ## Session Continuity
 
@@ -150,13 +159,28 @@ Resume context:
 - 55% context remaining
 ```
 
-### Handoff Document
-For complex multi-session work, create dedicated handoff:
-- What was accomplished
+### HANDOFF.md Document
+For zero-context sessions or complex multi-session work. Created by `/paul:pause`:
+
+- Self-contained entry point (assumes no prior context)
+- What was accomplished this session
+- What's in progress
 - Key decisions made
 - Current blockers
-- Exact next steps
-- File paths for resume
+- Exact next action
+- Loop position (PLAN/APPLY/UNIFY markers)
+
+**When to use HANDOFF vs STATE.md alone:**
+- **STATE.md only:** Quick break, returning soon, context might persist
+- **HANDOFF + STATE.md:** End of day, context limits, sharing with fresh session
+
+### Session Commands
+
+| Command | Purpose |
+|---------|---------|
+| `/paul:pause` | Create HANDOFF, update STATE, prepare for break |
+| `/paul:resume` | Restore context from HANDOFF/STATE, suggest next action |
+| `/paul:progress` | Mid-session check, suggests ONE next action |
 
 ## Anti-Patterns
 

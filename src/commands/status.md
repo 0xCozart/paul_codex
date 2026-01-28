@@ -1,14 +1,21 @@
 ---
 name: paul:status
-description: Show current PAUL loop position and progress
+description: "[DEPRECATED] Use /paul:progress instead"
 argument-hint:
 allowed-tools: [Read]
 ---
 
+> **⚠️ DEPRECATED:** This command is deprecated. Use `/paul:progress` instead.
+>
+> `/paul:progress` provides the same information plus:
+> - Visual milestone progress
+> - Smarter routing with single next-action suggestion
+> - Optional context argument for tailored suggestions
+
 <objective>
 Display current loop position (PLAN/APPLY/UNIFY) and phase progress.
 
-**When to use:** Check where you are in the PAUL loop, see what's next.
+**When to use:** Use `/paul:progress` instead for better routing.
 </objective>
 
 <execution_context>

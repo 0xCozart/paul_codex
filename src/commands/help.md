@@ -92,12 +92,10 @@ Usage: `/paul:unify .paul/phases/01-foundation/01-01-PLAN.md`
 
 ---
 
-### `/paul:status`
-Show current loop position and progress.
+### `/paul:status` *(deprecated)*
+> Use `/paul:progress` instead.
 
-- Displays PLAN/APPLY/UNIFY position
-- Shows phase progress (X of Y)
-- Suggests next action
+Shows current loop position. Deprecated in favor of `/paul:progress` which provides better routing.
 
 Usage: `/paul:status`
 
@@ -128,15 +126,17 @@ Usage: `/paul:resume`
 
 ---
 
-### `/paul:progress`
-Smart status with routing - suggests exact next action.
+### `/paul:progress [context]`
+Smart status with routing - suggests ONE next action.
 
 - Shows milestone and phase progress visually
 - Displays current loop position
-- Routes to correct next command
+- Suggests exactly ONE next action (prevents decision fatigue)
+- Accepts optional context to tailor suggestion
 - Warns about context limits
 
 Usage: `/paul:progress`
+Usage: `/paul:progress "I only have 30 minutes"`
 
 ---
 
@@ -216,8 +216,7 @@ Completion checks
 
 **Checking where you are:**
 ```
-/paul:status     # Current state
-/paul:progress   # State + what to do next
+/paul:progress   # State + ONE next action (recommended)
 ```
 
 **Resuming work (new session):**
@@ -240,8 +239,8 @@ Completion checks
 
 ## Getting Help
 
+- Run `/paul:progress` to see where you are and what to do next
 - Read `.paul/PROJECT.md` for project context
 - Read `.paul/STATE.md` for current position
 - Check `.paul/ROADMAP.md` for phase overview
-- Run `/paul:status` to see where you are
 </reference>

@@ -1,20 +1,26 @@
 ---
 name: paul:progress
-description: Smart status with routing - suggests exact next action
-argument-hint:
+description: Smart status with routing - suggests ONE next action
+argument-hint: "[context]"
 allowed-tools: [Read]
 ---
 
 <objective>
-Show current progress and **route to the correct next action**. More actionable than status.
+Show current progress and **route to exactly ONE next action**. Prevents decision fatigue by suggesting a single best path.
 
-**When to use:** When unsure what to do next, or to get a quick progress check with guidance.
+**When to use:**
+- Mid-session check on progress
+- After `/paul:resume` for more context
+- When unsure what to do next
+- To get a tailored suggestion based on your current focus
 </objective>
 
 <execution_context>
 </execution_context>
 
 <context>
+$ARGUMENTS
+
 @.paul/STATE.md
 @.paul/ROADMAP.md
 </context>
@@ -25,9 +31,10 @@ Show current progress and **route to the correct next action**. More actionable 
 Read `.paul/STATE.md` and `.paul/ROADMAP.md`:
 - Current phase and total phases
 - Current plan (if any)
-- Loop position
+- Loop position (PLAN/APPLY/UNIFY markers)
 - Roadmap progress
 - Performance metrics (if tracked)
+- Blockers or concerns
 </step>
 
 <step name="calculate_progress">
@@ -36,31 +43,48 @@ Determine overall progress:
 **Milestone Progress:**
 - Phases complete: X of Y
 - Current phase progress: Z%
-- Estimated remaining: [phases left]
 
 **Current Loop:**
 - Position: PLAN/APPLY/UNIFY
 - Status: [what's happening]
 </step>
 
-<step name="determine_routing">
-Based on state, determine exact next command:
+<step name="consider_user_context">
+**If `[context]` argument provided:**
 
-| Situation | Route To |
-|-----------|----------|
+User has given additional context about their current focus or constraint.
+Factor this into routing decision:
+- "I need to fix a bug first" → prioritize that over planned work
+- "I only have 30 minutes" → suggest smaller scope
+- "I want to finish this phase" → stay on current path
+- "I'm stuck on X" → suggest debug or research approach
+
+**If no argument:** Use default routing based on state alone.
+</step>
+
+<step name="determine_routing">
+Based on state (+ user context if provided), determine **ONE** next action:
+
+**Default routing (no user context):**
+
+| Situation | Single Suggestion |
+|-----------|-------------------|
 | No plan exists | `/paul:plan` |
-| Plan awaiting approval | "Review plan, then approve" |
-| Plan approved, not executed | `/paul:apply` |
-| Applied, not unified | `/paul:unify` |
-| Loop complete, more plans | `/paul:plan` |
-| Phase complete | `/paul:plan` (next phase) |
-| Milestone complete | "Ready for next milestone" |
-| Context getting large | `/paul:pause` |
-| Stuck or blocked | "Review blockers in STATE.md" |
+| Plan awaiting approval | "Approve plan to proceed" |
+| Plan approved, not executed | `/paul:apply [path]` |
+| Applied, not unified | `/paul:unify [path]` |
+| Loop complete, more phases | `/paul:plan` (next phase) |
+| Milestone complete | "Create next milestone or ship" |
+| Blockers present | "Address blocker: [specific]" |
+| Context at DEEP/CRITICAL | `/paul:pause` |
+
+**With user context:** Adjust suggestion to align with stated intent.
+
+**IMPORTANT:** Suggest exactly ONE action. Not multiple options.
 </step>
 
 <step name="display_progress">
-Show progress with routing:
+Show progress with single routing:
 
 ```
 ════════════════════════════════════════
@@ -80,27 +104,30 @@ Current Loop: Phase 2, Plan 02-03
 └─────────────────────────────────────┘
 
 ────────────────────────────────────────
-▶ NEXT: /paul:unify
+▶ NEXT: /paul:unify .paul/phases/02-features/02-03-PLAN.md
   Close the loop and update state.
 ────────────────────────────────────────
+
+Type "yes" to proceed, or provide context for a different suggestion.
 ```
 </step>
 
-<step name="context_check">
-If conversation is long, suggest pause:
+<step name="context_advisory">
+If context is at DEEP or CRITICAL bracket:
 
 ```
-⚠️ Context Advisory: This session is getting long.
-   Consider running /paul:pause before context limit.
+⚠️ Context Advisory: Session at [X]% capacity.
+   Recommended: /paul:pause before continuing.
 ```
 </step>
 
 </process>
 
 <success_criteria>
-- [ ] Overall progress displayed
+- [ ] Overall progress displayed visually
 - [ ] Current loop position shown
-- [ ] Exact next command suggested
+- [ ] Exactly ONE next action suggested (not multiple)
+- [ ] User context considered if provided
 - [ ] Context advisory shown if needed
 </success_criteria>
 
@@ -109,19 +136,20 @@ If conversation is long, suggest pause:
 ## GSD Parity Documentation
 
 ### Source Reference
-- **GSD File:** N/A - PAUL Innovation
+- **GSD File:** `commands/gsd/progress.md`
 
-### PAUL Innovation
-This is a **PAUL-native feature** combining:
-- Status display (like /paul:status)
-- Intelligent routing (determines what to do)
-- Context awareness (warns about session length)
+### Adapted from GSD
+- Rich progress display
+- Phase/milestone tracking
+- Routing logic based on state
 
-### Difference from /paul:status
-- **status:** Shows current state objectively
-- **progress:** Shows state AND tells you what to do next
+### PAUL Innovations
+- **Single suggestion:** GSD offers multiple options; PAUL suggests ONE to prevent decision fatigue
+- **User context argument:** Accept `[context]` to tailor suggestion
+- **Redirect pattern:** "Type 'yes' or provide different context"
+- **Deprecates status:** This command replaces `/paul:status`
 
 ### Design Philosophy
-- **Action-oriented:** Every display ends with a clear next step
-- **Context-aware:** Proactively suggests pause when needed
-- **Visual progress:** Shows milestone completion at a glance
+- **One best path:** Reduce cognitive load with single clear suggestion
+- **User override:** If suggestion doesn't fit, user provides context for recalculation
+- **Context-aware:** Proactively suggests pause when session is long
