@@ -106,7 +106,11 @@ For each <task> in order:
    ════════════════════════════════════════
    ```
 3. Wait for user selection
-4. Record decision made
+4. **Record decision to STATE.md:**
+   - Open `.paul/STATE.md`
+   - Find `### Decisions` under `## Accumulated Context`
+   - Add row: `| [date]: [Decision summary] | Phase [N] | [Impact on work] |`
+   - Example: `| 2026-01-28: Install in sandbox for testing | Phase 1 | Project created in sandbox/box2-paul-test |`
 5. Continue with chosen direction
 
 **If type="checkpoint:human-action":**
@@ -145,7 +149,8 @@ If a task verification fails:
    - Retry: attempt the task again
    - Skip: mark as failed, continue (creates deviation)
    - Stop: halt execution, prepare for debugging
-4. **Record decision** for UNIFY reconciliation
+4. **Record resolution to STATE.md:**
+   - Add to `### Decisions` section: `| [date]: Task [N] [retry/skip/stop] - [reason] | Phase [N] | [impact] |`
 </step>
 
 <step name="track_progress">
