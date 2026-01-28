@@ -1,0 +1,30 @@
+{
+  "name": "paul-framework",
+  "version": "0.1.0",
+  "description": "Plan-Apply-Unify Loop - A structured AI-assisted development framework for Claude Code",
+  "bin": {
+    "paul-framework": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "src/commands",
+    "src/templates",
+    "src/references",
+    "src/workflows",
+    "src/rules"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai",
+    "planning",
+    "structured-development",
+    "paul",
+    "plan-apply-unify"
+  ],
+  "author": "Chris Kahler",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.7.0"
+  }
+}

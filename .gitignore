@@ -1,0 +1,18 @@
+# PAUL instance data (user's own usage)
+.paul/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Handoff files (session-specific, not part of distribution)
+HANDOFF*.md
