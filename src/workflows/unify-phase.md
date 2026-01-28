@@ -22,6 +22,7 @@ Next phase: PLAN (next plan or next phase)
 <references>
 @~/.claude/paul-framework/references/loop-phases.md
 @~/.claude/paul-framework/templates/SUMMARY.md
+@~/.claude/paul-framework/workflows/transition-phase.md (loaded when last plan in phase)
 </references>
 
 <process>
@@ -100,19 +101,20 @@ Next phase: PLAN (next plan or next phase)
    - Update resume file (point to SUMMARY)
 </step>
 
-<step name="update_roadmap">
-If this completes the phase (all plans done):
+<step name="check_phase_completion">
+**Determine if this is the last plan in the phase:**
 
-1. Read ROADMAP.md
-2. Update phase table:
-   - Status: Complete
-   - Completed: date
-3. Update "Phases: X of Y complete"
-4. Mark plan checkbox: `[x]`
+1. Count PLAN.md files in current phase directory
+2. Count SUMMARY.md files (including the one just created)
+3. Compare counts:
+   - If PLAN count = SUMMARY count → Last plan, trigger transition
+   - If PLAN count > SUMMARY count → More plans remain in phase
 </step>
 
-<step name="signal_completion">
-Report with quick continuation prompt:
+<step name="route_based_on_completion">
+**If more plans remain in phase:**
+
+Report with quick continuation:
 ```
 ════════════════════════════════════════
 LOOP COMPLETE
@@ -122,13 +124,29 @@ Plan: {NN}-{plan} — [description]
 [summary of what was built]
 [deviations if any]
 
----
-Continue to next PLAN?
+Phase {N} progress: {X}/{Y} plans complete
 
-[1] Yes, plan next | [2] Pause here
+---
+Continue to next plan?
+
+[1] Yes, plan {NN+1} | [2] Pause here
+════════════════════════════════════════
 ```
 
-**Accept quick inputs:** "1", "yes", "continue", "go" → run `/paul:plan` for next phase/plan
+**Accept:** "1", "yes", "continue" → run `/paul:plan` for next plan in same phase
+
+---
+
+**If last plan in phase (transition triggered):**
+
+1. Announce: "Phase {N} complete. Running transition..."
+2. **Load and execute:** @~/.claude/paul-framework/workflows/transition-phase.md
+3. Transition workflow handles:
+   - Evolve PROJECT.md
+   - Verify phase completion
+   - Clean stale handoffs
+   - Route to next phase or milestone
+
 </step>
 
 </process>
