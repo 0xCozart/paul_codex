@@ -11,6 +11,7 @@ PAUL_RULE_1=No implementation code without approved PLAN.md. Research/exploratio
 PAUL_RULE_2=Every APPLY must be followed by UNIFY. UNIFY reconciles plan vs actual, updates STATE.md, logs decisions.
 PAUL_RULE_3=Respect PLAN.md "Boundaries" / "DO NOT CHANGE" sections. Stop and confirm before modifying protected items.
 PAUL_RULE_4=When blocked: document in STATE.md Blockers, notify human, await approval before workarounds.
+PAUL_RULE_4B=At phase transition: VERIFY state consistency (STATE.md, PROJECT.md, ROADMAP.md aligned). Blocking error if misaligned. Re-read full files, check all fields.
 
 # SHOULD (quality)
 PAUL_RULE_5=Tasks require verification criteria: <verify>[proof of success]</verify>. No verify = cannot complete.

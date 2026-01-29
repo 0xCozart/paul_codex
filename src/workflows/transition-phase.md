@@ -233,6 +233,62 @@ Git commit created: {short-hash}
 ```
 </step>
 
+<step name="verify_state_consistency" priority="critical">
+**CRITICAL: Verify state files are aligned before declaring transition complete.**
+
+State consistency is foundational to PAUL. If STATE.md, PROJECT.md, or ROADMAP.md are misaligned, all downstream work breaks — resume fails, progress tracking is wrong, context is lost.
+
+**1. Re-read all three files completely:**
+```bash
+cat .paul/STATE.md
+cat .paul/PROJECT.md
+cat .paul/ROADMAP.md
+```
+
+**2. Verify alignment across these fields:**
+
+| Field | STATE.md | PROJECT.md | ROADMAP.md |
+|-------|----------|------------|------------|
+| Version | `Version:` field | Current State table | Version Overview |
+| Phase | `Phase:` field | (implicit in Active) | Phase Structure table |
+| Status | `Status:` field | `Status:` in table | Phase status column |
+| Focus | `Current focus:` header | (matches Active) | Current Milestone |
+
+**3. Check for stale references:**
+- No "blocked on X" if X is complete
+- No "IN PROGRESS" for completed phases
+- Current focus matches current phase, not previous
+- Progress bars match actual plan counts
+
+**4. If ANY misalignment found:**
+```
+════════════════════════════════════════
+⚠️ STATE CONSISTENCY ERROR
+════════════════════════════════════════
+
+Misalignment detected:
+| Field | STATE.md | PROJECT.md | ROADMAP.md |
+|-------|----------|------------|------------|
+| {field} | {value} | {value} | {value} |
+
+Fix ALL misalignments before proceeding.
+This is a blocking error — do not route to next phase.
+════════════════════════════════════════
+```
+
+**Fix the issues, then re-verify.**
+
+**5. If aligned:**
+```
+State consistency: ✓
+  STATE.md    — Phase {N+1}, v{version}, ready to plan
+  PROJECT.md  — v{version}, {active_count} active requirements
+  ROADMAP.md  — Phase {N} ✅, Phase {N+1} 🔵
+```
+
+**Only proceed to route_next after verification passes.**
+</step>
+
 <step name="route_next">
 **Check if milestone complete:**
 
@@ -307,6 +363,7 @@ What's next?
 - [ ] ROADMAP.md marked complete
 - [ ] Feature branches merged (if any)
 - [ ] Git commit created for phase
+- [ ] **STATE CONSISTENCY VERIFIED** (all three files aligned - BLOCKING)
 - [ ] User knows next steps with quick continuation
 </success_criteria>
 
