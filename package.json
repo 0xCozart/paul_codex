@@ -1,6 +1,6 @@
 {
   "name": "paul-framework",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Plan-Apply-Unify Loop - A structured AI-assisted development framework for Claude Code",
   "bin": {
     "paul-framework": "bin/install.js"
