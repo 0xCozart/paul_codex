@@ -204,26 +204,3 @@ Each plan produces 2-4 commits (tasks + metadata). Clear, granular, bisectable.
 - "Commit noise" irrelevant when consumer is Claude, not humans
 
 </commit_strategy_rationale>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/references/git-integration.md`
-
-### Adapted from GSD
-- Core principle: commit outcomes, not process
-- Commit points table (what to commit vs not)
-- Per-task atomic commits rationale
-- Example git log showing granular history
-- Anti-patterns (intermediate artifacts, planning tweaks)
-- Context engineering for AI benefit
-
-### PAUL Innovations
-- **PAUL commit format:** `{type}({phase}-{plan}): {description}`
-- **Decimal phase support:** `08.5-01` for urgent interruptions
-- **AC results in plan completion:** Maps to numbered acceptance criteria
-- **Loop-aware commits:** Plan completion happens after UNIFY, not just after tasks
-- **STATE.md in metadata commits:** Single source of truth always updated
-- **Handoff commit type:** `wip({phase})` format for session breaks

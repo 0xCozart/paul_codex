@@ -137,25 +137,3 @@ Template for `.paul/phases/XX-name/{phase}-{plan}-UAT.md` — issues discovered 
 |------|---------|---------|--------|
 | **ISSUES.md** | Deferred enhancements | Nice-to-haves discovered during APPLY | During development |
 | **UAT-ISSUES.md** | Testing problems | Bugs found during verification | During UAT |
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/templates/uat-issues.md`
-
-### Adapted from GSD
-- UAT-NNN numbering format
-- Severity guide (Blocker/Major/Minor/Cosmetic)
-- Issue fields (Description, Expected, Actual, Repro)
-- Open/Resolved section structure
-- Workflow guidance
-- Difference from global ISSUES.md
-
-### PAUL Innovations
-- **File naming:** `{phase}-{plan}-UAT.md` (vs GSD's `-ISSUES.md`)
-- **Location:** `.paul/phases/XX-name/` directory structure
-- **AC integration:** Features map to plan's acceptance criteria
-- **FIX plan reference:** Resolved issues reference the fix plan that addressed them
-- **Workflow name:** "verify-work workflow" instead of "/gsd:verify-work"

@@ -440,7 +440,7 @@ PAUL takes a different approach from GSD:
 | Criteria | Embedded in tasks | First-class AC section |
 | Rules | Static prompts | CARL dynamic loading |
 
-Same comprehensive coverage, different philosophy. PAUL prioritizes quality over speed-for-speed's-sake.
+Same comprehensive coverage, different philosophy. PAUL prioritizes quality over speed-for-speed's-sake. See [PAUL-VS-GSD.md](PAUL-VS-GSD.md) for full comparison.
 
 ### vs. Traditional Planning
 

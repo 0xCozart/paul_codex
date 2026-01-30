@@ -217,25 +217,3 @@ Single feature focus ensures full quality throughout the cycle.
 - Fix before proceeding
 
 </error_handling>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/references/tdd.md`
-
-### Adapted from GSD
-- Overview (design quality, not coverage metrics)
-- When to use TDD vs standard plans (decision heuristic)
-- RED-GREEN-REFACTOR execution flow
-- Test quality guidelines
-- Context budget (~40% for TDD plans)
-- Error handling patterns
-
-### PAUL Innovations
-- **PAUL commit format:** `{type}({phase}-{plan}): {description}` instead of GSD format
-- **Acceptance criteria integration:** AC-1, AC-2, AC-3 for test/impl/refactor phases
-- **Plan type frontmatter:** `type: tdd` in YAML header
-- **Boundaries section:** Explicit scope control for TDD plans
-- **Loop integration:** TDD plan still requires UNIFY phase to close loop

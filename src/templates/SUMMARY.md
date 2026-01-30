@@ -219,31 +219,3 @@ The one-liner should tell someone what actually shipped.
 **Ready:** What's available for next phase to build on.
 **Concerns:** Potential issues to watch for.
 **Blockers:** Anything preventing next phase (usually "None").
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/summary.md`
-
-### Adapted from GSD
-- Frontmatter structure (phase, plan, subsystem, tags, requires, provides, affects)
-- Tech tracking (tech-stack.added, tech-stack.patterns, key-files, key-decisions)
-- Performance metrics (duration, started, completed)
-- One-liner requirements (substantive, not "phase complete")
-- Task commits section (atomic commits per task)
-- Files Created/Modified section
-- Decisions Made section
-- Deviations from Plan structure (auto-fixed vs deferred)
-- Issues Encountered section
-- Next Phase Readiness section
-
-### PAUL Innovations Beyond GSD
-- **Acceptance Criteria Results table** - Explicit pass/fail for each AC from PLAN.md. GSD tracks task completion but not AC verification.
-- **Deviations Summary table** - Quick overview before detailed breakdown. Adds at-a-glance impact assessment.
-- **Structured tables throughout** - More tabular format for quick scanning vs. GSD's more prose-heavy format.
-
-### Sources for PAUL Additions
-- AC Results table: Standard QA practice for requirement traceability
-- Deviations summary: Executive summary pattern for quick impact assessment

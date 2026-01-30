@@ -327,22 +327,3 @@ Template for `.paul/codebase/CONCERNS.md` - captures known issues and areas requ
 
 **How this gets populated:**
 Explore agents detect these during codebase mapping. Manual additions welcome for human-discovered issues. This is living documentation, not a complaint list.
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/codebase/concerns.md`
-
-### Adapted from GSD
-- Template structure (Tech Debt, Bugs, Security, Performance, Fragile Areas, etc.)
-- Good example with comprehensive, actionable concerns
-- Guidelines emphasizing file paths and measurements
-- Tone guidelines for professional documentation
-
-### PAUL Innovations
-- Output path: `.paul/codebase/CONCERNS.md` (not `.planning/codebase/`)
-- Explicit "Files:" field in each concern category (GSD implied it)
-- Emphasis on actionable items aligned with PAUL's planning approach
-- Integration context for PAUL planning workflows

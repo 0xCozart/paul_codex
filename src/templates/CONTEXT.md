@@ -86,23 +86,3 @@ Template for `.paul/phases/{NN}-{name}/CONTEXT.md` - phase discussion context ha
 | CONTEXT.md | Discussion output (this file) |
 | PLAN.md | Consumes context for planning |
 | RESEARCH.md | May inform context or result from questions |
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/templates/phase-context.md` (similar concept)
-
-### Adapted from GSD
-- Handoff file pattern
-- Goals and approach structure
-- Open questions section
-- Temporary file lifecycle note
-
-### PAUL Innovations Beyond GSD
-- **Phase directory location:** Lives in phase directory, not root .paul/
-- **Status field:** Tracks whether context is complete
-- **Explicit relationship to discuss/plan commands:** Documents the workflow
-- **Constraints section:** Separated from approach for clarity
-- **Not deleted after use:** Kept for reference unlike MILESTONE-CONTEXT.md

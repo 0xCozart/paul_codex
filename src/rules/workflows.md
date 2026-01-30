@@ -131,24 +131,3 @@ Next phase: UNIFY (after execution completes)
 
 </process>
 ```
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/.claude/rules/workflows.md`
-
-### Adapted from GSD
-- No frontmatter rule
-- Common XML tags (purpose, when_to_use, required_reading, process, step)
-- Step element conventions (name=snake_case, priority attribute)
-- Conditional logic patterns
-- Key principle: Workflows contain detailed logic
-
-### PAUL Adaptations
-- **Required sections:** Elevated purpose, when_to_use, process to MUST-have (GSD says "common")
-- **Loop context:** Added `<loop_context>` section for PLAN/APPLY/UNIFY phase awareness (PAUL-specific)
-- **Project paths:** References `.paul/` instead of `.planning/`
-- **Conditional syntax:** Uses `autonomous="true/false"` from PLAN frontmatter (PAUL pattern)
-- **Example:** Provided complete apply-phase workflow structure

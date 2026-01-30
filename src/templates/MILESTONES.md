@@ -151,7 +151,6 @@ Include decimal phases in the range when relevant:
 - PLAN.md, STATE.md, PROJECT.md, SUMMARY.md templates
 - ROADMAP.md with phase structure
 - CARL PAUL domain with 11 rules
-- GSD parity documentation
 
 **Stats:**
 | Metric | Value |
@@ -166,26 +165,3 @@ Include decimal phases in the range when relevant:
 
 **What's next:** v0.2 Session Continuity — pause/resume workflow
 ```
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/milestone.md`
-
-### Adapted from GSD
-- Entry structure (version header, delivered, phases, accomplishments, stats, git range, what's next)
-- Reverse chronological ordering
-- Guidelines for when to create milestones
-- Stats collection commands
-
-### PAUL Innovations Beyond GSD
-- **Stats as table:** Tabular format for cleaner display vs bullet list
-- **Explicit decimal phase documentation:** Guidelines for including decimal phases in range
-- **What's next options:** Multiple formats (goal, reference, end state)
-- **Section specifications:** Detailed guidance for each section
-
-### Sources for PAUL Additions
-- Stats table: Common dashboard pattern for scannable metrics
-- Decimal phases: Aligns with ROADMAP.md decimal insertion system

@@ -326,29 +326,3 @@ depends_on: ["01-01"]  # Plan 02 imports User type from 01-01
 - src/lib/auth.ts (auth system stable)
 </boundaries>
 ```
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/phase-prompt.md`
-- **GSD Workflow:** `~/.claude/get-shit-done/workflows/plan-phase.md`
-
-### Adapted from GSD
-- Frontmatter structure (phase, plan, type, wave, depends_on, files_modified, autonomous)
-- Task XML structure (<task type>, <name>, <files>, <action>, <verify>, <done>)
-- Checkpoint types (checkpoint:decision, checkpoint:human-verify, checkpoint:human-action)
-- Parallel execution patterns (wave-based grouping)
-- Scope guidance (2-3 tasks, ~50% context, vertical slices)
-
-### PAUL Innovations Beyond GSD
-- **Explicit acceptance criteria section** - GSD embeds criteria in tasks; PAUL elevates to first-class <acceptance_criteria> block with Given/When/Then format
-- **Boundaries section** - GSD mentions boundaries in planning; PAUL makes them explicit in every PLAN.md
-- **Task-to-AC linking** - PAUL tasks reference specific AC-N in <done> for traceability
-- **Structured objective** - PAUL splits into Goal/Purpose/Output vs GSD's single objective
-
-### Sources for PAUL Additions
-- Given/When/Then format: BDD (Behavior-Driven Development) standard, cited in PAUL-FRAMEWORK.md research
-- Explicit boundaries: "DO NOT CHANGE" pattern from Addy Osmani's spec writing guide
-- Acceptance criteria elevation: Industry standard from PRD best practices

@@ -207,18 +207,3 @@ What's next?
 - [ ] Findings consolidated into phase RESEARCH.md
 - [ ] Summary presented for review
 </success_criteria>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** No direct equivalent — PAUL innovation
-
-### PAUL Innovation
-- **Claude-driven discovery:** Identifies unknowns instead of user specifying
-- **Parallel orchestration:** Spawns multiple research agents simultaneously
-- **Agent type classification:** Automatically selects Explore vs general-purpose
-- **Phase-scoped output:** Saves to phase directory for planning context
-- **Consolidated summary:** Creates both individual and summary files
-- **Token efficiency:** Limits to 3 parallel agents, filters trivial lookups

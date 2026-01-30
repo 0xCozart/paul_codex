@@ -239,18 +239,3 @@ DO: Focus on genuine unknowns that inform decisions
 - Report error
 - Offer to retry with different approach or agent type
 </error_handling>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** No direct equivalent — PAUL innovation
-
-### PAUL Innovation
-- **Subagent-appropriate use case:** Research is explicitly called out as appropriate
-- **Agent type selection:** Logic for choosing Explore vs general-purpose
-- **Criteria validation:** Explicit checks against subagent-criteria.md
-- **Trivial filter:** Handles simple lookups in main session
-- **Parallel support:** Multiple topics can run simultaneously
-- **Review-first:** Never auto-integrates findings

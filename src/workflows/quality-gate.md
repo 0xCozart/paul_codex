@@ -261,17 +261,3 @@ End workflow.
 - Report clean scan
 - Note in CONCERNS.md: "No significant concerns detected"
 </error_handling>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** None - PAUL innovation
-
-### PAUL Innovation
-This is a new capability not present in GSD:
-- **MCP-based scanning:** Uses sonarqube MCP server
-- **Automated CONCERNS.md:** Populates from real analysis
-- **Quality gate workflow:** Objective pass/fail checks
-- **Graceful degradation:** Handles disabled state cleanly

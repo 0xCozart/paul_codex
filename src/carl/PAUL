@@ -24,5 +24,3 @@ PAUL_RULE_10=Size tasks for single session (~50% context). Split larger tasks du
 PAUL_RULE_11=One commit per phase at transition. Format: {type}({phase}): {description}. WIP commits optional at pause. Version alignment required at milestone.
 PAUL_RULE_12=Urgent work uses decimal phases (2.1, 2.2). Integers = planned, decimals = interruptions.
 
-# PARITY
-PAUL_RULE_13=After creating PAUL artifacts: cite GSD equivalent, note adaptations, document innovations.

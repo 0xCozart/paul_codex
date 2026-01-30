@@ -178,31 +178,3 @@ Template for `.paul/PROJECT.md` — the project's business context and requireme
 **Purpose:** Measurable outcomes.
 **Include:** Target values and current state.
 **Why:** Objective success criteria prevent endless scope expansion.
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/project.md` (implied from PROJECT.md references in workflows)
-- **GSD Workflow:** References in `plan-phase.md`, `state.md`
-
-### Adapted from GSD
-- Core value concept (one-liner that guides decisions)
-- Requirements tracking (validated/active categories)
-- Key Decisions table (decision, rationale, date, status)
-- Constraints section (technical/business)
-- Tech stack overview
-
-### PAUL Innovations Beyond GSD
-- **Out of Scope section** - Explicit exclusions to prevent scope creep. GSD mentions constraints but doesn't have explicit exclusion list.
-- **Target Users section** - User-centric framing. GSD focuses more on technical context.
-- **Success Metrics table** - Measurable outcomes with tracking. GSD doesn't include quantitative success criteria.
-- **Compliance Constraints** - Separate category for regulatory requirements.
-- **Links section** - Quick reference to all project resources.
-
-### Sources for PAUL Additions
-- Out of Scope: PRD best practice for scope management
-- Target Users: User-centered design principles
-- Success Metrics: OKR/KPI standard practice
-- Compliance Constraints: B2B SaaS requirements

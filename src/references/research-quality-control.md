@@ -245,24 +245,3 @@ For each source consulted:
 </quick_reference>
 
 </research_quality_control>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/references/research-pitfalls.md`
-
-### Adapted from GSD
-- Known pitfalls (config scope, search vagueness, deprecated features, etc.)
-- Red flags section (perfect success, missing URLs, unsupported absolutes)
-- Verification checklists (pre-submission, critical claims, source quality)
-- Quick reference section
-- Living document philosophy
-
-### PAUL Innovations
-- **Positive framing:** Renamed from "pitfalls" (avoidance) to "quality-control" (enhancement)
-- **Quality patterns section:** Added positive behaviors to follow, not just anti-patterns
-- **Confidence levels:** Formal HIGH/MEDIUM/LOW/UNKNOWN framework
-- **Structured XML:** Uses semantic containers for machine-readable patterns
-- **Checklist templates:** Reusable verification checklists in named containers

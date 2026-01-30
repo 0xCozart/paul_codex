@@ -184,20 +184,3 @@ Quick Reference:
 ```
 
 </specialized_workflow_integration>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** None - this is a PAUL innovation
-
-### Adapted from GSD
-- None
-
-### PAUL Innovations
-- **Explicit skill tracking:** Declare skill dependencies per-project
-- **Layered reinforcement:** PROJECT → ROADMAP → PLAN → UNIFY
-- **Gap analysis:** Verify required skills were used during UNIFY
-- **Priority levels:** Required vs optional for flexible enforcement
-- **Manual verification:** Simple, reliable, no hook complexity

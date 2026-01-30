@@ -175,7 +175,6 @@ STATE.md: Updated with new phase position
 ## Constraints
 
 - Templates first, then workflows, then commands (dependency order)
-- Must follow GSD patterns with PAUL innovations
 - Keep commands simple — complex logic in workflows
 
 ## Additional Context
@@ -189,29 +188,3 @@ STATE.md: Updated with new phase position
 *This file is temporary. It will be deleted after /paul:create-milestone creates the milestone.*
 *Do NOT commit this file to version control.*
 ```
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/milestone-context.md`
-
-### Adapted from GSD
-- Handoff file concept (discuss → create)
-- Lifecycle documentation (create → consume → delete)
-- Content sections (features, scope, phase mapping, constraints, notes)
-- Clear "do NOT include" guidance
-- Template placeholder pattern
-
-### PAUL Innovations Beyond GSD
-- **Lifecycle diagram:** Visual flowchart of handoff process
-- **Content guidelines table:** Structured include/exclude with rationale
-- **Integration section:** How context file connects to STATE.md and ROADMAP.md
-- **Version control note:** Explicit "do not commit" guidance
-- **Phase mapping table:** Tabular format vs bullet list
-
-### Sources for PAUL Additions
-- Lifecycle diagram: Standard workflow documentation
-- Integration section: PAUL's emphasis on file relationships
-- Table format: Consistent with PAUL's preference for scannable layouts

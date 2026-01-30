@@ -106,25 +106,3 @@ Follow workflow: @src/workflows/plan-phase.md
 - [ ] STATE.md updated with loop position
 </success_criteria>
 ```
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/.claude/rules/commands.md`
-
-### Adapted from GSD
-- YAML frontmatter structure (name, description, argument-hint, allowed-tools)
-- Section order (objective, execution_context, context, process, success_criteria)
-- Core principle: Commands are thin wrappers
-- @-reference separation (execution_context vs context)
-- Success criteria checkbox format
-
-### PAUL Adaptations
-- **Command prefix:** `paul:` instead of `gsd:`
-- **Path pattern:** `src/commands/` instead of `commands/gsd/`
-- **Project state:** References `.paul/` instead of `.planning/`
-- **Allowed tools:** Added `Edit` to default tool list
-- **Example:** Provided complete paul:plan example structure
-- **CARL integration:** Commands work alongside CARL domains (noted but not enforced in rules)

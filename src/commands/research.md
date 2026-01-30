@@ -45,17 +45,3 @@ Follow workflow: @~/.claude/paul-framework/workflows/research.md
 - [ ] Findings saved to .paul/research/{topic}.md
 - [ ] Summary presented for review
 </success_criteria>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** No direct equivalent — PAUL innovation
-
-### PAUL Innovation
-- **Subagent-appropriate:** Uses subagents for their intended purpose (discovery)
-- **Agent type selection:** Chooses Explore vs general-purpose based on topic
-- **Criteria validation:** Checks against subagent-criteria.md before spawning
-- **Non-blocking:** Research informs but doesn't gate planning
-- **Review required:** Main session must vet findings before integration

@@ -91,23 +91,3 @@ Enhancements discovered during execution. Not critical - address in future phase
 4. Continue with current plan
 5. Review ISSUES.md during phase planning
 6. Address issues in appropriate future phase
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/templates/issues.md`
-
-### Adapted from GSD
-- ISS-NNN numbering format
-- Issue type categories
-- Open/Closed section structure
-- Effort estimates (Quick/Medium/Substantial)
-- Workflow guidance
-
-### PAUL Innovations
-- **Location:** `.paul/ISSUES.md` (matches PAUL directory structure)
-- **Phase/Plan reference:** "Phase [X] Plan [Y]" format
-- **Deviation rule reference:** Explicitly ties to rule #5
-- **SUMMARY.md integration:** Note logged issues in plan summary

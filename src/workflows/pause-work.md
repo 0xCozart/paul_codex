@@ -257,22 +257,3 @@ To resume later:
 **Git not available:**
 - Skip commit step, still create handoff
 </error_handling>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `commands/gsd/pause-work.md`
-
-### Adapted from GSD
-- `.continue-here.md` concept → PAUL uses `HANDOFF-{date}.md`
-- Structured handoff sections
-- WIP commit pattern
-- Confirmation display
-
-### PAUL Innovations
-- **Centralized handoff:** GSD puts `.continue-here.md` in phase directory; PAUL keeps `HANDOFF-*.md` in `.paul/` root for easier discovery
-- **Dated naming:** `HANDOFF-{date}.md` allows multiple handoffs without overwriting
-- **Loop position capture:** Explicitly captures PLAN/APPLY/UNIFY state
-- **Direct content:** Populates content directly, not from placeholder template

@@ -282,21 +282,3 @@ Template for `.paul/codebase/INTEGRATIONS.md` - captures external service depend
 
 **Security note:**
 Document WHERE secrets live (env vars, Vercel dashboard, 1Password), never WHAT the secrets are.
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/codebase/integrations.md`
-
-### Adapted from GSD
-- Template structure (APIs, Data Storage, Auth, Monitoring, CI/CD, etc.)
-- Good example with comprehensive external service documentation
-- Guidelines emphasizing security (no actual secrets)
-- Analysis approach for detecting integrations
-
-### PAUL Innovations
-- Output path: `.paul/codebase/INTEGRATIONS.md` (not `.planning/codebase/`)
-- Emphasis on environment configuration for PAUL project setup
-- Integration context for PAUL planning workflows

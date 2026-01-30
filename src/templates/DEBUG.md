@@ -162,23 +162,3 @@ Keep debug files focused:
 If evidence grows very large (10+ entries), consider whether you're going in circles. Check Eliminated to ensure you're not re-treading.
 
 </size_constraint>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/templates/DEBUG.md`
-
-### Adapted from GSD
-- File template structure (frontmatter, sections)
-- Section rules (OVERWRITE/APPEND/IMMUTABLE)
-- Lifecycle phases (gathering → investigating → fixing → verifying → resolved)
-- Resume behavior for context recovery
-- Size constraints
-
-### PAUL Innovations
-- **Directory location:** `.paul/debug/` instead of `.planning/debug/`
-- **Loop integration:** Complex fixes can trigger dedicated PLAN.md
-- **Resolved archive:** `.paul/debug/resolved/` for completed investigations
-- **Session-aware language:** "context reset" instead of "/clear"

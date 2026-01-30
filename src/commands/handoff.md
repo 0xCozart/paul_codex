@@ -179,7 +179,6 @@ Next session: /paul:resume → read handoff
 - "Missing..." / "We need..."
 - "GAP" / "TODO"
 - Questions about what doesn't exist
-- Comparison discussions (GSD has X, PAUL doesn't)
 
 **Thought indicators:**
 - "I think..." / "My thoughts:"
@@ -200,24 +199,3 @@ Next session: /paul:resume → read handoff
 - [ ] Reference files included
 - [ ] Next actions prioritized
 </success_criteria>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** None — PAUL innovation
-
-### PAUL Innovation
-This command has no GSD equivalent. It represents PAUL's emphasis on:
-
-1. **Session continuity** - Structured handoffs across context breaks
-2. **Decision documentation** - Capturing why, not just what
-3. **Smart context** - Using conversation instead of redundant prompts
-4. **Synthesis** - Claude's observations + user's input combined
-
-### Design Philosophy
-- **Context-aware:** Extracts decisions/gaps from conversation
-- **Non-redundant:** Doesn't ask what was already discussed
-- **Comprehensive:** Full state + decisions + gaps + next actions
-- **Actionable:** Prioritized list for next session

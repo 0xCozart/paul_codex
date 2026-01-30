@@ -128,17 +128,3 @@ Draft ──▶ Reviewed ──▶ Integrated
 | PLAN.md | May reference research findings |
 | RESEARCH.md | This file (research output) |
 | subagent-criteria.md | Validates when to spawn research |
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** No direct equivalent — PAUL innovation
-
-### PAUL Innovation
-- **Subagent metadata:** Tracks which agent, when spawned, duration
-- **Status lifecycle:** Draft → Reviewed → Integrated
-- **Review-first design:** Emphasizes main session vetting
-- **Organized structure:** Sources, findings, recommendations, questions
-- **Token awareness:** Includes estimate field for cost tracking

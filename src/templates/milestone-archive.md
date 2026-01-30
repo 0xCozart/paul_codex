@@ -234,27 +234,3 @@ Plans:
 
 *For current project status, see [ROADMAP.md](../ROADMAP.md) and [STATE.md](../STATE.md)*
 ```
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `~/.claude/get-shit-done/templates/milestone-archive.md`
-
-### Adapted from GSD
-- Archive file structure (status, phases, overview, summary)
-- Placeholder pattern with `{{DOUBLE_BRACES}}`
-- Milestone summary sections (decisions, issues, tech debt)
-- Filename convention pattern
-- Post-archive actions
-
-### PAUL Innovations Beyond GSD
-- **Placeholder reference table:** Explicit documentation of all placeholders and sources
-- **Mustache-style conditionals:** `{{#HAS_DECIMAL_PHASES}}` pattern for template logic
-- **Links to active files:** References to ROADMAP.md and STATE.md from archive
-- **Filename rules:** Explicit kebab-case and version number formatting
-
-### Sources for PAUL Additions
-- Placeholder table: Template documentation best practice
-- Mustache syntax: Standard templating pattern for conditionals

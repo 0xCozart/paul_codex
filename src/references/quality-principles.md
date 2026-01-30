@@ -124,26 +124,3 @@ If it sounds like corporate PM theater, delete it.
 </anti_enterprise>
 
 </principles>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/references/principles.md`
-
-### Adapted from GSD
-- Solo developer + Claude model
-- Plans are prompts (PLAN.md IS the prompt)
-- Scope control (context degradation curve)
-- Claude automates (checkpoints for verification/decision only)
-- Deviation rules (auto-fix, ask architectural, log enhancements)
-- Anti-enterprise (no teams, sprints, RACI, human time estimates)
-- Ship fast (plan → execute → ship → learn → repeat)
-
-### PAUL Innovations
-- **Loop-first philosophy:** Explicit PLAN → APPLY → UNIFY cycle requirement
-- **Acceptance-driven:** First-class AC section in every plan
-- **Numbered acceptance criteria:** AC-1, AC-2, AC-3 format for traceability
-- **Decimal phases:** 8.5 for urgent interruptions (GSD uses integers only)
-- **Boundaries section:** Explicit DO NOT CHANGE scope control

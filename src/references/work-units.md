@@ -159,25 +159,3 @@ Each: 30-40% context, peak quality
 </summary>
 
 </work_units>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** `get-shit-done/references/scope-estimation.md`
-
-### Adapted from GSD
-- Quality degradation insight (context usage table)
-- Context target (50%)
-- Task limits (2-3 per plan)
-- Split signals
-- Splitting strategies (vertical slices)
-- Context estimation tables
-- Anti-patterns
-
-### PAUL Innovations
-- **Renamed:** "work-units" vs "scope-estimation" (PAUL terminology)
-- **CARL integration:** Notes CARL as recommended operational layer
-- **PAUL loop context:** Shows how work-units fits PLAN/APPLY/UNIFY
-- **Simpler presentation:** Reduced from GSD's comprehensive detail

@@ -71,16 +71,3 @@ Subcommand: $ARGUMENTS (optional)
 - [ ] Current phase skills displayed (for audit)
 - [ ] Configuration summary shown (for list)
 </success_criteria>
-
----
-
-## GSD Parity Documentation
-
-### Source Reference
-- **GSD File:** None — PAUL innovation
-
-### PAUL Innovation
-- **First-class skill management:** Dedicated command for workflow tracking
-- **Multiple subcommands:** Full config, quick add, audit, list
-- **Integration with UNIFY:** Audit supports gap analysis workflow
-- **Layered reinforcement:** Skills flow through PROJECT → ROADMAP → PLAN → UNIFY
