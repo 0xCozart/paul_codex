@@ -305,7 +305,7 @@ Every task has: files, action, verify, done. If you can't specify all four, the 
 
 ### CARL Integration
 
-PAUL has a companion: **CARL** (Context Augmentation & Reinforcement Layer).
+PAUL has a companion: **[CARL](https://github.com/ChristopherKahler/carl-core)** (Context Augmentation & Reinforcement Layer).
 
 CARL is a dynamic rule injection system. Instead of bloating your context with static prompts, CARL loads rules just-in-time based on what you're doing:
 
