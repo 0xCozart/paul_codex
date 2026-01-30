@@ -73,6 +73,34 @@ Next phase: APPLY (after plan approval)
 4. Do NOT reflexively chain all prior summaries - only load what's genuinely needed
 </step>
 
+<step name="check_specialized_flows">
+**Check for SPECIAL-FLOWS.md and populate skills section.**
+
+1. Check if `.paul/SPECIAL-FLOWS.md` exists
+2. If exists:
+   - Read SPECIAL-FLOWS.md
+   - Extract skills marked as "required" for the work type being planned
+   - Match against phase/plan work being done
+   - Prepare <skills> section content for PLAN.md
+3. If not exists:
+   - Add comment: "No SPECIAL-FLOWS.md - skills section omitted"
+   - Skip skills section in PLAN (or include minimal placeholder)
+4. Display reminder if required skills found:
+   ```
+   ════════════════════════════════════════
+   ⚠️  REQUIRED SKILLS for this plan:
+   ════════════════════════════════════════
+   - /skill-1 (work type: X)
+   - /skill-2 (work type: Y)
+
+   These must be loaded before /paul:apply will proceed.
+   ════════════════════════════════════════
+   ```
+
+**Note:** The skills section is populated from SPECIAL-FLOWS.md during plan creation.
+Required skills will BLOCK apply-phase until confirmed loaded.
+</step>
+
 <step name="create_plan">
 1. Create phase directory: `.paul/phases/{NN}-{phase-name}/`
 2. Generate PLAN.md following template structure:

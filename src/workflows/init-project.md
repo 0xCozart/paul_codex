@@ -290,10 +290,37 @@ Store `integrations_enabled = false`
 (Don't create config.md - user can add later)
 </step>
 
+<step name="check_specialized_flows">
+**Ask about specialized skills:**
+
+```
+Do you have specialized skills or commands for this project?
+(e.g., /revops-expert, /frontend-design, custom workflows)
+
+[1] Yes, configure now
+[2] Skip for now (add later via /paul:flows)
+```
+
+Wait for user response.
+
+**If "1" or "yes" or "configure":**
+
+1. Store `specialized_flows_enabled = true`
+2. Route to: @workflows/configure-special-flows.md
+3. After completion, return to init confirmation
+4. Store `skills_configured_count` from workflow output
+
+**If "2" or "skip" or "no":**
+
+Store `specialized_flows_enabled = false`
+(User can add later via /paul:flows)
+</step>
+
 <step name="confirm_and_route">
 **Display confirmation with ONE next action:**
 
-**If integrations_enabled:**
+**Display based on enabled features:**
+
 ```
 ════════════════════════════════════════
 PAUL INITIALIZED
@@ -306,7 +333,8 @@ Created:
   .paul/PROJECT.md    ✓
   .paul/ROADMAP.md    ✓
   .paul/STATE.md      ✓
-  .paul/config.md     ✓  (SonarQube enabled)
+  .paul/config.md     ✓  (if integrations_enabled: "SonarQube enabled")
+  .paul/SPECIAL-FLOWS.md  ✓  (if specialized_flows_enabled: "[N] skills configured")
   .paul/phases/       ✓
 
 ────────────────────────────────────────
@@ -317,28 +345,8 @@ Created:
 Type "yes" to proceed, or ask questions first.
 ```
 
-**If not integrations_enabled:**
-```
-════════════════════════════════════════
-PAUL INITIALIZED
-════════════════════════════════════════
-
-Project: [project_name]
-Core value: [core_value]
-
-Created:
-  .paul/PROJECT.md    ✓
-  .paul/ROADMAP.md    ✓
-  .paul/STATE.md      ✓
-  .paul/phases/       ✓
-
-────────────────────────────────────────
-▶ NEXT: /paul:plan
-  Define your phases and create your first plan.
-────────────────────────────────────────
-
-Type "yes" to proceed, or ask questions first.
-```
+**Note:** Only show config.md and SPECIAL-FLOWS.md lines if those features were enabled.
+If neither was enabled, show the minimal version without those lines.
 
 **Do NOT suggest multiple next steps.** ONE action only.
 </step>
@@ -351,6 +359,7 @@ Type "yes" to proceed, or ask questions first.
 - `.paul/ROADMAP.md` (skeleton for planning)
 - `.paul/STATE.md` (initialized state)
 - `.paul/config.md` (if integrations enabled)
+- `.paul/SPECIAL-FLOWS.md` (if specialized flows enabled)
 - `.paul/phases/` (empty directory)
 - Clear routing to `/paul:plan`
 </output>
@@ -385,4 +394,5 @@ Type "yes" to proceed, or ask questions first.
 ### PAUL Innovations
 - **Integration prompts:** Optional SonarQube setup during init
 - **Config creation:** `.paul/config.md` for enabled integrations
+- **Specialized flows:** Optional skill tracking via SPECIAL-FLOWS.md
 - **Extensible design:** Ready for future integration prompts

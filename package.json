@@ -1,6 +1,6 @@
 {
   "name": "paul-framework",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Plan-Apply-Unify Loop - A structured AI-assisted development framework for Claude Code",
   "bin": {
     "paul-framework": "bin/install.js"
@@ -24,6 +24,14 @@
   ],
   "author": "Chris Kahler",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherKahler/paul.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChristopherKahler/paul/issues"
+  },
+  "homepage": "https://github.com/ChristopherKahler/paul#readme",
   "engines": {
     "node": ">=16.7.0"
   }

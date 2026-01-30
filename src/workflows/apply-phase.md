@@ -49,6 +49,45 @@ Next phase: UNIFY (after execution completes)
 5. Load acceptance criteria for verification reference
 </step>
 
+<step name="verify_required_skills" priority="blocking">
+**BLOCKING CHECK: Required skills must be loaded before execution.**
+
+1. Check if PLAN.md has a <skills> section
+2. If no <skills> section: proceed (no skill requirements)
+3. If <skills> section exists:
+   a. For each skill marked "required":
+      - Check if skill has been invoked in current session
+      - If not invoked: add to missing_skills list
+   b. If missing_skills is not empty:
+      - **BLOCK execution**
+      - Display:
+        ```
+        ════════════════════════════════════════
+        ⛔ BLOCKED: Required skills not loaded
+        ════════════════════════════════════════
+
+        This plan requires the following skills:
+
+        Missing:
+        - /skill-name → Run: /skill-name
+        - /skill-name → Run: /skill-name
+
+        Load these skills now, then type "ready" to continue.
+        Or type "override" to proceed without (not recommended).
+        ════════════════════════════════════════
+        ```
+      - Wait for user input
+      - If "ready": re-check skills, proceed if all loaded
+      - If "override":
+        - Log deviation to STATE.md Decisions: "Override: Proceeded without required skills [list]"
+        - Proceed with warning
+   c. If all required skills loaded:
+      - Display: "✓ All required skills loaded"
+      - Proceed to execute_tasks
+
+**This check runs BEFORE any task execution, ensuring skills are in place.**
+</step>
+
 <step name="execute_tasks">
 For each <task> in order:
 

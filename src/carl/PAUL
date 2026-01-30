@@ -7,21 +7,22 @@ PAUL_ALWAYS_ON=false
 PAUL_RULE_0=PAUL governs structured AI development via Plan-Apply-Unify loop. Requires .paul/ directory.
 
 # MUST (critical)
-PAUL_RULE_1=No implementation code without approved PLAN.md. Research/exploration OK. Violation = stop, request approval.
-PAUL_RULE_2=Every APPLY must be followed by UNIFY. UNIFY reconciles plan vs actual, updates STATE.md, logs decisions.
-PAUL_RULE_3=Respect PLAN.md "Boundaries" / "DO NOT CHANGE" sections. Stop and confirm before modifying protected items.
-PAUL_RULE_4=When blocked: document in STATE.md Blockers, notify human, await approval before workarounds.
-PAUL_RULE_4B=At phase transition: VERIFY state consistency (STATE.md, PROJECT.md, ROADMAP.md aligned). Blocking error if misaligned. Re-read full files, check all fields.
+PAUL_RULE_1=LOAD BEFORE EXECUTE: Before ANY /paul:* command, MUST Read the command file (~/.claude/paul-framework/src/commands/{name}.md) AND its execution_context workflow file. NEVER execute PAUL commands from memory or inference - always load the actual files first. If files cannot be loaded, STOP and inform user.
+PAUL_RULE_2=No implementation code without approved PLAN.md. Research/exploration OK. Violation = stop, request approval.
+PAUL_RULE_3=Every APPLY must be followed by UNIFY. UNIFY reconciles plan vs actual, updates STATE.md, logs decisions.
+PAUL_RULE_4=Respect PLAN.md "Boundaries" / "DO NOT CHANGE" sections. Stop and confirm before modifying protected items.
+PAUL_RULE_5=When blocked: document in STATE.md Blockers, notify human, await approval before workarounds.
+PAUL_RULE_6=At phase transition: VERIFY state consistency (STATE.md, PROJECT.md, ROADMAP.md aligned). Blocking error if misaligned. Re-read full files, check all fields.
 
 # SHOULD (quality)
-PAUL_RULE_5=Tasks require verification criteria: <verify>[proof of success]</verify>. No verify = cannot complete.
-PAUL_RULE_6=Log all APPLY deviations: what, why, downstream impact. Audit trail for UNIFY.
-PAUL_RULE_7=Use BDD acceptance criteria: Given [precondition] / When [action] / Then [outcome].
+PAUL_RULE_7=Tasks require verification criteria: <verify>[proof of success]</verify>. No verify = cannot complete.
+PAUL_RULE_8=Log all APPLY deviations: what, why, downstream impact. Audit trail for UNIFY.
+PAUL_RULE_9=Use BDD acceptance criteria: Given [precondition] / When [action] / Then [outcome].
 
 # MAY (patterns)
-PAUL_RULE_8=Size tasks for single session (~50% context). Split larger tasks during planning.
-PAUL_RULE_9=One commit per phase at transition. Format: {type}({phase}): {description}. WIP commits optional at pause. Version alignment required at milestone.
-PAUL_RULE_10=Urgent work uses decimal phases (2.1, 2.2). Integers = planned, decimals = interruptions.
+PAUL_RULE_10=Size tasks for single session (~50% context). Split larger tasks during planning.
+PAUL_RULE_11=One commit per phase at transition. Format: {type}({phase}): {description}. WIP commits optional at pause. Version alignment required at milestone.
+PAUL_RULE_12=Urgent work uses decimal phases (2.1, 2.2). Integers = planned, decimals = interruptions.
 
 # PARITY
-PAUL_RULE_11=After creating PAUL artifacts: cite GSD equivalent, note adaptations, document innovations.
+PAUL_RULE_13=After creating PAUL artifacts: cite GSD equivalent, note adaptations, document innovations.

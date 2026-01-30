@@ -52,6 +52,38 @@ Next phase: PLAN (next plan or next phase)
    - Impact on outcomes
 </step>
 
+<step name="audit_skill_invocations">
+**Check specialized workflow usage (if configured):**
+
+1. Check if .paul/SPECIAL-FLOWS.md exists:
+   ```bash
+   ls .paul/SPECIAL-FLOWS.md 2>/dev/null
+   ```
+
+2. If not exists: Skip this step entirely
+
+3. If exists:
+   a. Read SPECIAL-FLOWS.md
+   b. For each skill with priority "required":
+      - Check if skill was invoked during this APPLY phase
+      - Mark as ✓ (invoked) or ○ (gap)
+   c. If any gaps found:
+      - Add to STATE.md Deviations section:
+        ```markdown
+        ### Skill Audit (Phase [N])
+        | Expected | Invoked | Notes |
+        |----------|---------|-------|
+        | /skill-name | ○ | [reason if known] |
+        ```
+      - Warn user: "Skill gap(s) documented in STATE.md. Review before next phase."
+   d. Do NOT block UNIFY for skill gaps (warn only)
+
+4. If all required skills invoked:
+   - Note in SUMMARY.md: "Skill audit: All required skills invoked ✓"
+
+**Reference:** @references/specialized-workflow-integration.md
+</step>
+
 <step name="create_summary">
 1. Create SUMMARY.md at `.paul/phases/{phase}/{plan}-SUMMARY.md`
 2. Include:
