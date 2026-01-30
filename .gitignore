@@ -16,3 +16,4 @@ Thumbs.db
 
 # Handoff files in root (session-specific, not part of distribution)
 /HANDOFF*.md
+PAUL-SPECIAL-FLOWS-SPEC.md
